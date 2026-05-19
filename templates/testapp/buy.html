@@ -1,0 +1,21 @@
+{% extends 'testapp/base.html' %}
+
+{% block content %}
+
+<div class="form-box">
+
+<h2>Buy {{tshirt.name}}</h2>
+
+<form method="POST">
+
+{% csrf_token %}
+
+{{form.as_p}}
+
+<button class="btn">Place Order</button>
+
+</form>
+
+</div>
+
+{% endblock %}

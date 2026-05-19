@@ -1,0 +1,29 @@
+{% extends 'testapp/base.html' %}
+
+{% block content %}
+
+<h1 class="title">Order History</h1>
+
+<table class="history-table">
+
+<tr>
+<th>Tshirt</th>
+<th>Price</th>
+<th>Quantity</th>
+<th>Total Amount</th>
+</tr>
+
+{% for o in orders %}
+
+<tr>
+<td>{{o.tshirt_name}}</td>
+<td>₹{{o.price}}</td>
+<td>{{o.quantity}}</td>
+<td>₹{{o.total_amount}}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

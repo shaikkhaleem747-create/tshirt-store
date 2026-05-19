@@ -1,0 +1,23 @@
+{% extends 'testapp/base.html' %}
+
+{% block content %}
+
+<div class="detail-container">
+
+<h1>{{tshirt.name}}</h1>
+
+<img src="{{tshirt.image.url}}" class="detail-img">
+
+<p>{{tshirt.description|linebreaks}}</p>
+
+<h2 class="price">₹{{tshirt.price}}</h2>
+
+<a href="/buy/{{tshirt.id}}" class="btn">Buy Now</a>
+
+<br><br>
+
+<a href="/" class="btn">Back Home</a>
+
+</div>
+
+{% endblock %}

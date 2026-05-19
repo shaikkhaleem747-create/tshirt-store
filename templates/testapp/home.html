@@ -1,0 +1,45 @@
+{% extends 'testapp/base.html' %}
+
+{% block content %}
+
+<h1 class="title">T-Shirt Store</h1>
+
+<div class="container">
+
+{% for t in page_obj %}
+
+<div class="card">
+
+<a href="/product/{{t.id}}">
+<img src="{{t.image.url}}">
+</a>
+
+<h3>{{t.name}}</h3>
+
+<p class="price">₹{{t.price}}</p>
+
+<a href="/product/{{t.id}}" class="btn">View Product</a>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+<!-- Pagination -->
+
+<div class="pagination">
+
+{% if page_obj.has_previous %}
+<a href="?page={{page_obj.previous_page_number}}">Previous</a>
+{% endif %}
+
+<span>Page {{page_obj.number}} of {{page_obj.paginator.num_pages}}</span>
+
+{% if page_obj.has_next %}
+<a href="?page={{page_obj.next_page_number}}">Next</a>
+{% endif %}
+
+</div>
+
+{% endblock %}
