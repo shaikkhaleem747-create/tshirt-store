@@ -4,22 +4,56 @@
 
 <h1 class="title">Order History</h1>
 
+{% if request.GET.success %}
+
+<script>
+
+alert("Your Order Placed Successfully!");
+
+</script>
+
+{% endif %}
+
+<div style="text-align:center; margin-bottom:20px;">
+
+<a href="/clearhistory/" class="btn">
+
+Clear History
+
+</a>
+
+</div>
+
 <table class="history-table">
 
 <tr>
+
 <th>Tshirt</th>
+
 <th>Price</th>
+
 <th>Quantity</th>
+
 <th>Total Amount</th>
+
+<th>Status</th>
+
 </tr>
 
 {% for o in orders %}
 
 <tr>
+
 <td>{{o.tshirt_name}}</td>
+
 <td>₹{{o.price}}</td>
+
 <td>{{o.quantity}}</td>
+
 <td>₹{{o.total_amount}}</td>
+
+<td>Your Order Placed Successfully</td>
+
 </tr>
 
 {% endfor %}

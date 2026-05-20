@@ -1,0 +1,43 @@
+{% extends 'testapp/base.html' %}
+
+{% block content %}
+
+<div class="form-box">
+
+<h1>Create Account</h1>
+
+<p>
+Create your account to access the store and start shopping.
+</p>
+
+<br>
+
+<form method="post">
+
+{% csrf_token %}
+
+<input type="text" name="username" placeholder="Phone Number or Username" required>
+
+<br><br>
+
+<input type="email" name="email" placeholder="Email" required>
+
+<br><br>
+
+<input type="password" name="password" placeholder="Password" required>
+
+<br><br>
+
+<input type="password" name="confirm_password" placeholder="Re Enter Password" required>
+
+<br><br>
+
+<button type="submit" class="btn">Sign Up</button>
+
+</form>
+
+<p style="color:red;">{{error}}</p>
+
+</div>
+
+{% endblock %}
